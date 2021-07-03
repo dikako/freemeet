@@ -22,6 +22,7 @@ type Account struct {
 	UserID  uint
 }
 
+//db connection
 func connectDB() *gorm.DB {
 	db, err := gorm.Open("postgres", "host=127.0.0.1 port=5432 user=postgres dbname=freemeet password=freemeet sslmode=disable")
 	helpers.HandleErr(err)
