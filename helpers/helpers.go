@@ -4,6 +4,8 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -24,4 +26,11 @@ func HashOnlyVulnerable(pass []byte) string {
 	hash := md5.New()
 	hash.Write(pass)
 	return hex.EncodeToString(hash.Sum(nil))
+}
+
+func ConnectDB() *gorm.DB {
+	db, err := gorm.Open("postgres", "host=127.0.0.1 port=5432 user=postgres dbname=freemeet password=freemeet sslmode=disable")
+	HandleErr(err)
+
+	return db
 }
