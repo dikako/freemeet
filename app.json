@@ -1,0 +1,12 @@
+{
+    "name": "Start on Heroku: Go",
+    "description": "Go Getting Started Example App",
+    "keywords": [
+      "freemeet",
+      "go",
+      "sample",
+      "example"
+    ],
+    "website": "http://github.com/dikako/freemeet",
+    "repository": "http://github.com/dikako/freemeet"
+  }
